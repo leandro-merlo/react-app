@@ -1,37 +1,15 @@
-import React, { Component } from 'react';
-import TodolistForm  from './TodolistForm';
+import React from 'react'
+import TodolistItem from './TodolistItem'
 
-class Todolist extends Component{
+export const Todolist = (props) => {
+    
+    const { items } = this.props;
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: []
-    }
-  }
-
-  pushToItems = (event) => {
-    event.preventDefault();
-    this.setState({ 
-      items: [...this.state.items, this.state.todo ],
-      todo: ''
-    })
-  }
-  
-  render() {
-    const { items } = this.state; 
     return (
-      <div>
-        <TodolistForm />
-        <hr/>
         <ul>
           { items.map((item, index) => 
-            <li key={index}>{item}</li>
+            <TodolistItem item={item} key={index}/>
           )}
         </ul>
-      </div>
-    );    
-  }
+    );
 }
-
-export default Todolist;
