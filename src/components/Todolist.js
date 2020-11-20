@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
+import TodolistForm  from './TodolistForm';
 
 class Todolist extends Component{
 
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
-      todo: ''
+      items: []
     }
-  }
-
-  onChange = (event) => {
-    this.setState({ todo: event.target.value })
   }
 
   pushToItems = (event) => {
@@ -23,11 +19,10 @@ class Todolist extends Component{
   }
   
   render() {
-    const { items, todo } = this.state; 
+    const { items } = this.state; 
     return (
       <div>
-        <input type="text" name="todo" placeholder="Digite a tarefa a realizar aqui" onChange={ this.onChange } value={ todo }/>
-        <button type="button" onClick={ this.pushToItems }>Criar</button>
+        <TodolistForm />
         <hr/>
         <ul>
           { items.map((item, index) => 
