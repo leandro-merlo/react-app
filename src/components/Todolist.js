@@ -3,7 +3,7 @@ import TodolistItem from './TodolistItem'
 
 export const Todolist = (props) => {
     
-    const { items } = this.props;
+    const { items } = props;
 
     return (
         <ul>

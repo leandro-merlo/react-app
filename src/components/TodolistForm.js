@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class TodolistForm extends Component {
 
     constructor(props) {
-        supoer(props);
+        super(props);
         this.state = {
             todo: ''
         }
@@ -16,6 +16,9 @@ export default class TodolistForm extends Component {
     onAdd = (event) => {
         event.preventDefault();
         this.props.pushToItems(this.state.todo);
+        this.setState({
+            todo: ''
+        })
     }
 
 
