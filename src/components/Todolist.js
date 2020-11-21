@@ -3,12 +3,12 @@ import TodolistItem from './TodolistItem'
 
 export const Todolist = (props) => {
     
-    const { items } = props;
+    const { items, removeFromItems } = props;
 
     return (
         <ul>
-          { items.map((item, index) => 
-            <TodolistItem item={item} key={index}/>
+          { items.map((item, index) =>
+            <TodolistItem item={item} index={index} key={index} removeFromItems={ removeFromItems }/>
           )}
         </ul>
     );

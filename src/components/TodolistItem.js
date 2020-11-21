@@ -4,15 +4,15 @@ export default class TodolistItem extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            item: this.props.item,
-            key: this.props.key
-        }
     }
 
+    onRemove = () => {
+        this.props.removeFromItems(this.props.index)
+    }
+    
     render() {
         return (
-        <li id={this.state.key}>{this.state.item}</li>
+        <li key={this.props.index} id={"id" + this.props.index}>{this.props.item} <button type="button" onClick={this.onRemove}>X</button></li>
         )
     }
 } 

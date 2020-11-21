@@ -16,12 +16,19 @@ export default class TodolistApp extends Component {
         })
     }
 
+    removeFromItems = (index) => {
+        let { items } = this.state;
+        items.splice(index, 1);
+        console.log(items);
+        this.setState( { items } );
+    }
+
     render() {
         const { items } = this.state; 
         return (
             <div>
                 <TodolistForm pushToItems={this.pushToItems}/>
-                <Todolist items={items}/>
+                <Todolist items={items} removeFromItems={this.removeFromItems } />
             </div>
         );
     }
