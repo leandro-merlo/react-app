@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TodolistForm from './../components/TodolistForm'
 import { Todolist } from './../components/Todolist'
+import { ContainerApp } from './../components/ContainerApp'
 
 export default class TodolistApp extends Component {
     constructor(props) {
@@ -26,12 +27,18 @@ export default class TodolistApp extends Component {
     render() {
         const { items } = this.state; 
         return (
-            <div className="container">
-                <h2>Todo List</h2>
-                <TodolistForm pushToItems={this.pushToItems}/>
-                <hr/>
-                <Todolist items={items} removeFromItems={this.removeFromItems } />
-            </div>
+            <ContainerApp>
+                <div className="col-sm-12">
+                    <h2>Todo List</h2>
+                </div>
+                <div className="col-sm-12">
+                    <TodolistForm pushToItems={this.pushToItems}/>
+                </div>
+                <div className="col-sm-12">
+                    <hr/>
+                    <Todolist items={items} removeFromItems={this.removeFromItems } />
+                </div>
+            </ContainerApp>
         );
     }
 }
