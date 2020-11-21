@@ -6,7 +6,7 @@ export const Todolist = (props) => {
     const { items, removeFromItems } = props;
 
     return (
-        <ul>
+        <ul className="list-group">
           { items.map((item, index) =>
             <TodolistItem item={item} index={index} key={index} removeFromItems={ removeFromItems }/>
           )}

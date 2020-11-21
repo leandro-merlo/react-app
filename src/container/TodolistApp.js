@@ -26,8 +26,10 @@ export default class TodolistApp extends Component {
     render() {
         const { items } = this.state; 
         return (
-            <div>
+            <div className="container">
+                <h2>Todo List</h2>
                 <TodolistForm pushToItems={this.pushToItems}/>
+                <hr/>
                 <Todolist items={items} removeFromItems={this.removeFromItems } />
             </div>
         );

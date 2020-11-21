@@ -26,8 +26,12 @@ export default class TodolistForm extends Component {
         const { todo } = this.state;
         return(
             <div>
-                <input type="text" name="todo" placeholder="Digite a tarefa a realizar aqui" onChange={ this.onChange } value={ todo }/>
-                <button type="button" onClick={ this.onAdd }>Criar</button>
+                <div className="form-group">
+                    <input className="form-control" type="text" name="todo" placeholder="Digite a tarefa a realizar aqui" onChange={ this.onChange } value={ todo }/>
+                </div>
+                <div>
+                    <button className='btn btn-success' type="button" onClick={ this.onAdd }>Criar</button>
+                </div>
             </div>
         )
     }

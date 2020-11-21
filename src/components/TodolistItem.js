@@ -12,7 +12,7 @@ export default class TodolistItem extends Component {
     
     render() {
         return (
-        <li key={this.props.index} id={"id" + this.props.index}>{this.props.item} <button type="button" onClick={this.onRemove}>X</button></li>
+        <li key={this.props.index} className="list-group-item" id={"id" + this.props.index}>{this.props.item} <button  type="button" className='btn btn-sm btn-danger' onClick={this.onRemove}>X</button></li>
         )
     }
 } 
