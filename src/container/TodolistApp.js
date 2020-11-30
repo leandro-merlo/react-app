@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TodolistForm from './../components/TodolistForm'
 import { Todolist } from './../components/Todolist'
 import { ContainerApp } from './../components/ContainerApp'
+import { getTodos } from './../components/API'
 
 export default class TodolistApp extends Component {
     constructor(props) {
@@ -9,6 +10,11 @@ export default class TodolistApp extends Component {
         this.state = {
             items: []
         }
+    }
+
+    async componentDidMount(){
+        const { data } = await getTodos();
+        this.setState({ items: data });        
     }
 
     pushToItems = (todo) => {
