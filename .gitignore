@@ -41,4 +41,6 @@ sketch
 !.vscode/extensions.json
 *.code-workspace
 
+src/api.js
+
 # End of https://www.toptal.com/developers/gitignore/api/react,linux,vscode

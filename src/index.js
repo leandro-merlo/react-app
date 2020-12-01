@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
 import reportWebVitals from './reportWebVitals';
 import TodolistApp from './container/TodolistApp';
+import WeatherApp from './container/WeatherApp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TodolistApp />
+    <WeatherApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
